@@ -4,7 +4,7 @@
 
 TODO: Add a link to the deployed Heroku app for your team here, e.g.
 
-* <https://s22-7pm-3-team02.herokuapp.com>
+* <https://s22-4pm-2-team02.herokuapp.com/>
 
 TODO: Add correct links to the -docs and -docs qa GitHub pages sites
 
