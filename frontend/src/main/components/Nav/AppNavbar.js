@@ -74,6 +74,9 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
+
+              {/* our code */}
+              
               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSB Dining Commons Menu" id="appnavbar-ucsbdiningcommonsmenu-dropdown" data-testid="appnavbar-ucsbdiningcommonsmenu-dropdown" >
