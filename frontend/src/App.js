@@ -28,8 +28,6 @@ import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 // // Articles
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 
-
-
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import "bootstrap/dist/css/bootstrap.css";
