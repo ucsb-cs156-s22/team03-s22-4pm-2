@@ -23,8 +23,8 @@ import DiningCommonsMenuIndexPage from "main/pages/DiningCommonsMenu/DiningCommo
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Menu Item Review
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
-// // Help Request
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+// Help Request
+import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 
@@ -110,7 +110,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
+              <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
         }
