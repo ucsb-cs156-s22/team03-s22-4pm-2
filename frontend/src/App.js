@@ -16,15 +16,15 @@ import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 // our code
 
 // // Dinning Commons Menu
-import DiningCommonsMenuIndexPage from "main/pages/DiningCommonsMenu/DiningCommonsMenuIndexPage";
+// import DiningCommonsMenuIndexPage from "main/pages/DiningCommonsMenu/DiningCommonsMenuIndexPage";
 // // UCSB Organization
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Recommendation Request
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Menu Item Review
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
-// Help Request
-import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+// // Help Request
+// import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 
@@ -82,7 +82,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsbdiningcommonsmenu/list" element={<DiningCommonsMenuIndexPage />} />
+              <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
             </>
           )
         }
@@ -110,7 +110,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
+              <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
             </>
           )
         }
