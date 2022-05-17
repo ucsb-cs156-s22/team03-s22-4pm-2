@@ -1,5 +1,5 @@
 const articlesFixtures = {
-    oneDiningCommons: {
+    oneArticle: {
         "id": "1",
         "title": "article1",
         "url": "test1@ucsb.edu",
@@ -7,7 +7,7 @@ const articlesFixtures = {
         "email": "a@ucsb.edu",
         "dateAdded": "2022-01-02T12:00:00",
     },
-    threeCommons: [
+    threeArticles: [
         {
             "id": "2",
             "title": "article2",
