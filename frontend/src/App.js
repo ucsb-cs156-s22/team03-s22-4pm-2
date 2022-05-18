@@ -6,7 +6,7 @@ import AdminUsersPage from "main/pages/AdminUsersPage";
 import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
-
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
 
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
@@ -91,7 +91,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsborganization/list" element={<TodosIndexPage />} />
+              <Route exact path="/ucsborganization/list" element={<OrganizationIndexPage />} />
             </>
           )
         }

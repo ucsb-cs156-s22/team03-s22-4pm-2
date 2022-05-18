@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useBackend } from 'main/utils/useBackend'; // use prefix indicates a React Hook
 
@@ -18,11 +19,14 @@ export default function RecommendationIndexPage() {
       []
     );
 
+
   return (
     <BasicLayout>
       <div className="pt-2">
         <h1>Recommendation</h1>
+
         <RecommendationTable recommendations={recommendations} currentUser={currentUser} />
+
       </div>
     </BasicLayout>
   )
