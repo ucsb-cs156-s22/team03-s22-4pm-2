@@ -1,10 +1,10 @@
-import OurTable, {ButtonColumn} from "main/components/OurTable";
-import { useBackendMutation } from "main/utils/useBackend";
-import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/ArticlesUtils"
+import OurTable from "main/components/OurTable";
+// import { useBackendMutation } from "main/utils/useBackend";
+// import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/ArticlesUtils"
 // import { useNavigate } from "react-router-dom";
-import { hasRole } from "main/utils/currentUser";
+// import { hasRole } from "main/utils/currentUser";
 
-export default function ArticlesTable({ articles, currentUser }) {
+export default function ArticlesTable({ articles, _currentUser }) {
 
     // const navigate = useNavigate();
 
@@ -13,15 +13,15 @@ export default function ArticlesTable({ articles, currentUser }) {
     // }
 
     // Stryker disable all : hard to test for query caching
-    const deleteMutation = useBackendMutation(
-        cellToAxiosParamsDelete,
-        { onSuccess: onDeleteSuccess },
-        ["/api/Article/all"]
-    );
+    // const deleteMutation = useBackendMutation(
+    //     cellToAxiosParamsDelete,
+    //     { onSuccess: onDeleteSuccess },
+    //     ["/api/Article/all"]
+    // );
     // Stryker enable all 
 
     // Stryker disable next-line all : TODO try to make a good test for this
-    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+    // const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
 
     const columns = [
         {
@@ -50,13 +50,14 @@ export default function ArticlesTable({ articles, currentUser }) {
         }
     ];
 
-    const columnsIfAdmin = [
-        ...columns,
-        // ButtonColumn("Edit", "primary", editCallback, "ArticlesTable"),
-        ButtonColumn("Delete", "danger", deleteCallback, "ArticlesTable")
-    ];
+    // const columnsIfAdmin = [
+    //     ...columns,
+    //     // ButtonColumn("Edit", "primary", editCallback, "ArticlesTable"),
+    //     ButtonColumn("Delete", "danger", deleteCallback, "ArticlesTable")
+    // ];
 
-    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    // const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsToDisplay = columns;
 
     return <OurTable
         data={articles}
