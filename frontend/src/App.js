@@ -24,7 +24,7 @@ import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCS
 // // Menu Item Review
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Help Request
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+// import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 
@@ -82,7 +82,11 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
+<<<<<<< HEAD
               <Route exact path="/ucsbdiningcommonsmenu/list" element={<UCSBDiningCommonsMenuIndexPage />} />
+=======
+              <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
+>>>>>>> 5aa580c2cd644f3e2a2d80f68fd1f27091ae6668
             </>
           )
         }
