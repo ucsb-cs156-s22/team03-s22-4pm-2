@@ -8,6 +8,7 @@ import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
 
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
+import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage"
 
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
@@ -76,10 +77,10 @@ function App() {
             </>
           )
         }
-
+        
         {/* our code */}
 
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
@@ -113,11 +114,11 @@ function App() {
               <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
             </>
           )
-        }
+        } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/article/list" element={<TodosIndexPage />} />
+              <Route exact path="/articles/list" element={<ArticlesIndexPage />} />
             </>
           )
         }
