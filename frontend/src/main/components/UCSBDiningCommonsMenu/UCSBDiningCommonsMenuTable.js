@@ -1,12 +1,12 @@
-import OurTable, { ButtonColumn } from "main/components/OurTable";
-import { useBackendMutation } from "main/utils/useBackend";
-import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDiningCommonsMenuUtils"
-import { useNavigate } from "react-router-dom";
-import { hasRole } from "main/utils/currentUser";
+import OurTable/*,{ ButtonColumn }*/from "main/components/OurTable";
+//import { useBackendMutation } from "main/utils/useBackend";
+//import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDiningCommonsMenuUtils"
+//import { useNavigate } from "react-router-dom";
+//import { hasRole } from "main/utils/currentUser";
 
-export default function UCSBDiningCommonsMenuTable({ dates, currentUser }) {
+export default function UCSBDiningCommonsMenuTable({ diningCommonsMenu, _currentUser }) {
 
-    const navigate = useNavigate();
+    /* const navigate = useNavigate();
 
     const editCallback = (cell) => {
         navigate(`/ucsbdiningcommonsmenu/edit/${cell.row.values.id}`)
@@ -21,7 +21,7 @@ export default function UCSBDiningCommonsMenuTable({ dates, currentUser }) {
     // Stryker enable all 
 
     // Stryker disable next-line all : TODO try to make a good test for this
-    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); } */
 
     const columns = [
         {
@@ -29,30 +29,31 @@ export default function UCSBDiningCommonsMenuTable({ dates, currentUser }) {
             accessor: 'id', // accessor is the "key" in the data
         },
         {
-            Header: 'QuarterYYYYQ',
-            accessor: 'quarterYYYYQ',
+            Header: 'DiningCommonsCode',
+            accessor: 'diningCommonsCode',
         },
         {
             Header: 'Name',
             accessor: 'name',
         },
         {
-            Header: 'Date',
-            accessor: 'localDateTime',
+            Header: 'Station',
+            accessor: 'station',
         }
     ];
 
-    const columnsIfAdmin = [
+/*     const columnsIfAdmin = [
         ...columns,
         ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
         ButtonColumn("Delete", "danger", deleteCallback, "UCSBDatesTable")
-    ];
+    ]; */
 
-    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    //const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsToDisplay = columns;
 
     return <OurTable
-        data={dates}
+        data={diningCommonsMenu}
         columns={columnsToDisplay}
-        testid={"UCSBDatesTable"}
+        testid={"UCSBDiningCommonsMenuTable"}
     />;
 };
