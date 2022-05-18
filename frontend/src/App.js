@@ -22,7 +22,7 @@ import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 // // Recommendation Request
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Menu Item Review
-import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
+import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 // // Help Request
 // import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
@@ -103,7 +103,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/menuitemreview/list" element={<MenuItemReviewIndexPage />} />
+              <Route exact path="/menuitemreview/list" element={<MenuItemReviewsIndexPage />} />
             </>
           )
         }
