@@ -26,4 +26,6 @@ export default function RecommendationIndexPage() {
       </div>
     </BasicLayout>
   )
+
+  //test comment
 }
