@@ -1,3 +1,4 @@
+
 import OurTable, { ButtonColumn } from "main/components/OurTable";
 //import OurTable from "main/components/OurTable";
 import { useBackendMutation } from "main/utils/useBackend";
@@ -6,6 +7,7 @@ import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/Recommendat
 import { hasRole } from "main/utils/currentUser";
 
 export default function RecommendationTable({ recommendations, currentUser }) {
+
 
     //const navigate = useNavigate();
 
@@ -23,6 +25,7 @@ export default function RecommendationTable({ recommendations, currentUser }) {
 
     // Stryker disable next-line all : TODO try to make a good test for this
     const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+
 
     const columns = [
         {
@@ -56,6 +59,7 @@ export default function RecommendationTable({ recommendations, currentUser }) {
         }
     ];
 
+
     const columnsIfAdmin = [
         ...columns,
         //ButtonColumn("Edit", "primary", editCallback, "RecommendationTable"),
@@ -65,6 +69,7 @@ export default function RecommendationTable({ recommendations, currentUser }) {
     const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
 
     //const columnsToDisplay = columns;
+
 
     return <OurTable
         data={recommendations}
