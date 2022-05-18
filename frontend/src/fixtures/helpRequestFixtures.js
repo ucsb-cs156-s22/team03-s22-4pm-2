@@ -3,7 +3,7 @@ const helpRequestFixtures = {
         "id": 1,
         "requesterEmail": "scsampath@ucsb.edu",
         "teamId": "2",
-        "tableOrBreakoutroom": "table",
+        "tableOrBreakoutRoom": "table",
         "requestTime": "2022-01-02T12:00:00",
         "explanation": "Need help setting up heroku",
         "solved": false
@@ -13,7 +13,7 @@ const helpRequestFixtures = {
             "id": 1,
             "requesterEmail": "naruto.shinobi.com",
             "teamId": "7",
-            "tableOrBreakoutroom": "breakout room",
+            "tableOrBreakoutRoom": "breakout room",
             "requestTime": "2022-01-02T12:00:00",
             "explanation": "need ramen",
             "solved": true
@@ -22,7 +22,7 @@ const helpRequestFixtures = {
             "id": 2,
             "requesterEmail": "luffy.d.com",
             "teamId": "strawhat",
-            "tableOrBreakoutroom": "breakout room",
+            "tableOrBreakoutRoom": "breakout room",
             "requestTime": "2022-01-02T12:00:00",
             "explanation": "need to become pirate king",
             "solved": false
@@ -31,7 +31,7 @@ const helpRequestFixtures = {
             "id": 3,
             "requesterEmail": "goku.dragonball.com",
             "teamId": "z",
-            "tableOrBreakoutroom": "table",
+            "tableOrBreakoutRoom": "table",
             "requestTime": "2022-01-02T12:00:00",
             "explanation": "Need food",
             "solved": true

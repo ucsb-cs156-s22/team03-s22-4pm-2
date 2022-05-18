@@ -5,7 +5,7 @@ import OurTable from "main/components/OurTable";
 //import { useNavigate } from "react-router-dom";
 // import { hasRole } from "main/utils/currentUser";
 
-export default function HelpRequestTable({ helpRequest, _currentUser }) {
+export default function HelpRequestTable({ helpRequests, _currentUser }) {
 
     // const navigate = useNavigate();
 
@@ -30,6 +30,10 @@ export default function HelpRequestTable({ helpRequest, _currentUser }) {
             accessor: 'id', // accessor is the "key" in the data
         },
         {
+            Header: 'Requester Email',
+            accessor: 'requesterEmail',
+        },
+        {
             Header: 'Team-ID',
             accessor: 'teamId',
         },
@@ -47,8 +51,8 @@ export default function HelpRequestTable({ helpRequest, _currentUser }) {
         },
         {
             Header: 'Solved',
-            accessor: 'solved',
-            accessor: (row, _rowIndex) => String(row.solved)
+            id: 'solved',
+            accessor: (row, _rowIndex) => String(row.solved),
         }
     ];
 
@@ -62,7 +66,7 @@ export default function HelpRequestTable({ helpRequest, _currentUser }) {
     const columnsToDisplay = columns;
 
     return <OurTable
-        data={helpRequest}
+        data={helpRequests}
         columns={columnsToDisplay}
         testid={"HelpRequestTable"}
     />;
