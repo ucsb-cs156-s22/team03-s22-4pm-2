@@ -55,7 +55,7 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
-              {
+               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSB Dining Commons" id="appnavbar-dining-commons-dropdown" data-testid="appnavbar-dining-commons-dropdown" >
                     <NavDropdown.Item as={Link} to="/diningCommons/list" data-testid="appnavbar-dining-commons-list">List Dining Commons</NavDropdown.Item>
@@ -75,9 +75,9 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 )
               }
 
-              {/* our code */}
+               {/* our code */}
               
-              {
+               {/* {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSB Dining Commons Menu" id="appnavbar-ucsbdiningcommonsmenu-dropdown" data-testid="appnavbar-ucsbdiningcommonsmenu-dropdown" >
                     <NavDropdown.Item as={Link} to="/ucsbdiningcommonsmenu/list" data-testid="appnavbar-ucsbdiningcommonsmenu-list">List Dining Commons Menu</NavDropdown.Item>
@@ -111,11 +111,11 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                     <NavDropdown.Item as={Link} to="/helprequest/list" data-testid="appnavbar-helprequest-list">List Help Request</NavDropdown.Item>
                   </NavDropdown>
                 )
-              }
+              } */}
               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="Articles" id="appnavbar-article-dropdown" data-testid="appnavbar-article-dropdown" >
-                    <NavDropdown.Item as={Link} to="/article/list" data-testid="appnavbar-article-list">List Article</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/articles/list" data-testid="appnavbar-article-list">List Articles</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
