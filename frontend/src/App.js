@@ -13,6 +13,8 @@ import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
+import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
+
 // our code
 
 // // Dinning Commons Menu
@@ -96,7 +98,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/recommendation/list" element={<TodosIndexPage />} />
+              <Route exact path="/recommendation/list" element={<RecommendationIndexPage />} />
             </>
           )
         }
