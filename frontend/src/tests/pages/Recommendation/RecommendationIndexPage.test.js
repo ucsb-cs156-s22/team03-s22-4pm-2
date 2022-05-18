@@ -120,7 +120,7 @@ describe("RecommendationIndexPage tests", () => {
 
         const restoreConsole = mockConsole();
 
-        const { queryByTestId } = render(
+        const { queryByTestId, getByText } = render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
                     <RecommendationIndexPage />
@@ -128,7 +128,13 @@ describe("RecommendationIndexPage tests", () => {
             </QueryClientProvider>
         );
 
-        await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(1); });
+        await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(3); });
+        const expectedHeaders = ["id", "Date Needed", "Date Requested", "Done?", "Explanation", "Professor Email", "Requester Email"];
+
+        expectedHeaders.forEach((headerText) => {
+            const header = getByText(headerText);
+            expect(header).toBeInTheDocument();
+        });
         restoreConsole();
 
         expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
