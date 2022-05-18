@@ -19,11 +19,14 @@ export default function RecommendationIndexPage() {
       []
     );
 
+
   return (
     <BasicLayout>
       <div className="pt-2">
         <h1>Recommendation</h1>
+
         <RecommendationTable recommendations={recommendations} currentUser={currentUser} />
+
       </div>
     </BasicLayout>
   )
