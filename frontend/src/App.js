@@ -21,7 +21,7 @@ import RecommendationIndexPage from "main/pages/Recommendation/RecommendationInd
 // our code
 
 // // Dinning Commons Menu
-// import DiningCommonsMenuIndexPage from "main/pages/DiningCommonsMenu/DiningCommonsMenuIndexPage";
+import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuIndexPage";
 // // UCSB Organization
 // import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Recommendation Request
@@ -87,7 +87,7 @@ function App() {
         {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
+              <Route exact path="/ucsbdiningcommonsmenu/list" element={<UCSBDiningCommonsMenuIndexPage />} />
             </>
           )
         }
