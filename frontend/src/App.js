@@ -21,7 +21,7 @@ import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage
 // // Recommendation Request
 import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
 // // Menu Item Review
-// import MenuItemReviewIndexPage from "main/pages/MenuItemReview/<PlaceHolder>IndexPage";
+import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 // // Help Request
 //import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
@@ -99,20 +99,20 @@ function App() {
             </>
           )
         }
-        {/* {
+        { 
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/menuitemreview/list" element={<TodosIndexPage />} />
+              <Route exact path="/menuitemreview/list" element={<MenuItemReviewsIndexPage />} />
             </>
           )
         }
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
-        } */}
+          } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
