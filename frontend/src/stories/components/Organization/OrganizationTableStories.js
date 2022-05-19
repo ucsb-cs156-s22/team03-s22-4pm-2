@@ -1,10 +1,10 @@
 import React from 'react';
 
-import UCSBOrganizationTable from "main/components/UCSBOrganization/UCSBOrganizationTable";
-import { ucsbOrganizationFixtures } from 'fixtures/ucsbOrganizationFixtures';
+import UCSBOrganizationTable from "main/components/Organization/UCSBOrganizationTable";
+import { organizationFixtures } from 'fixtures/organizationFixtures';
 
 export default {
-    title: 'components/Organization/UCSBOganizationTable',
+    title: 'components/Organization/UCSBOrganizationTable',
     component: UCSBOrganizationTable
 };
 
@@ -20,10 +20,10 @@ Empty.args = {
     organization: []
 };
 
-export const ThreeOrganization = Template.bind({});
+export const threeOrganization = Template.bind({});
 
-ThreeOrganization.args = {
-    organzation: ucsbOrganizationFixtures.ThreeOrganization
+threeOrganization.args = {
+    organzation: organizationFixtures.threeOrganization
 };
 
 
