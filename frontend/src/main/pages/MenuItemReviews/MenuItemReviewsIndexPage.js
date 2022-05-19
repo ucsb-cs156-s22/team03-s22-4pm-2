@@ -10,8 +10,8 @@ export default function MenuItemReviewIndexPage() {
 
   const { data: menuItemReviews, error: _error, status: _status } =
     useBackend(
-      ["/api/menuitemreview/all"],
-            { method: "GET", url: "/api/menuitemreview/all" },
+      ["/api/MenuItemReview/all"],
+            { method: "GET", url: "/api/MenuItemReview/all" },
       []
     );
     
