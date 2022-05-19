@@ -9,7 +9,7 @@ import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import { organizationFixtures } from "fixtures/organizationFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
-import mockConsole from "jest-mock-console";
+//import mockConsole from "jest-mock-console";
 
 
 const mockToast = jest.fn();
