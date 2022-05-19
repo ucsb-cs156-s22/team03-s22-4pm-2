@@ -23,7 +23,7 @@ import RecommendationIndexPage from "main/pages/Recommendation/RecommendationInd
 // // Menu Item Review
 import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 // // Help Request
-//import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
 import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage";
 
