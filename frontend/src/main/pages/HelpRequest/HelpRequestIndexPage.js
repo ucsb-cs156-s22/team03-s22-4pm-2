@@ -9,7 +9,7 @@ export default function HelpRequestIndexPage() {
 
   const currentUser = useCurrentUser();
 
-  const { data: helpRequest, error: _error, status: _status } =
+  const { data: helpRequests, error: _error, status: _status } =
     useBackend(
       // Stryker disable next-line all : don't test internal caching of React Query
       ["/api/helprequest/all"], { method: "GET", url: "/api/helprequest/all" }, []
@@ -19,7 +19,7 @@ export default function HelpRequestIndexPage() {
     <BasicLayout>
       <div className="pt-2">
         <h1>Help Request</h1>
-        <HelpRequestTable helpRequest={helpRequest} currentUser={currentUser} />
+        <HelpRequestTable helpRequests={helpRequests} currentUser={currentUser} />
       </div>
     </BasicLayout>
   )

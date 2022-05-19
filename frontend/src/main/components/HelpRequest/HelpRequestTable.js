@@ -1,7 +1,7 @@
 import OurTable, { ButtonColumn } from "main/components/OurTable";
 import { useBackendMutation } from "main/utils/useBackend";
 import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
-// import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { hasRole } from "main/utils/currentUser";
 
 export function cellToAxiosParamsDelete(cell) {
@@ -68,7 +68,7 @@ export default function HelpRequestTable({ helpRequests, currentUser }) {
     const columnsIfAdmin = [
         ...columns,
         // ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
-        ButtonColumn("Delete", "danger", deleteCallback, "UCSBDatesTable")
+        ButtonColumn("Delete", "danger", deleteCallback, "HelpRequestTable")
     ];
 
     const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
