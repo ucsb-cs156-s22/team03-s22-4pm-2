@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { _fireEvent, render, _waitFor } from "@testing-library/react";
 import { ucsbDiningCommonsMenuFixtures } from "fixtures/ucsbDiningCommonsMenuFixtures";
 import UCSBDiningCommonsMenuTable from "main/components/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuTable"
 import { QueryClient, QueryClientProvider } from "react-query";
