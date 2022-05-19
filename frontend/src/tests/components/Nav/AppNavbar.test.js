@@ -359,6 +359,7 @@ describe("AppNavbar tests", () => {
 
     test("renders the article menu correctly for an admin", async () => {
 
+
         const currentUser = currentUserFixtures.adminUser;
         const systemInfo = systemInfoFixtures.showingBoth;
 

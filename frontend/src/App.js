@@ -6,12 +6,15 @@ import AdminUsersPage from "main/pages/AdminUsersPage";
 import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
-
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
+import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage"
 
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
+
+//comment for testing
 
 import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
 
@@ -78,10 +81,10 @@ function App() {
             </>
           )
         }
-
+        
         {/* our code */}
 
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
@@ -91,7 +94,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsborganization/list" element={<TodosIndexPage />} />
+              <Route exact path="/ucsborganization/list" element={<OrganizationIndexPage />} />
             </>
           )
         }
@@ -115,11 +118,11 @@ function App() {
               <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
             </>
           )
-        }
+        } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/article/list" element={<TodosIndexPage />} />
+              <Route exact path="/articles/list" element={<ArticlesIndexPage />} />
             </>
           )
         }
