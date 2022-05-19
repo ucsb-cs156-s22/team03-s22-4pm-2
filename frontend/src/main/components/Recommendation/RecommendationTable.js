@@ -1,11 +1,30 @@
-//import OurTable, { ButtonColumn } from "main/components/OurTable";
-import OurTable from "main/components/OurTable";
-//import { useBackendMutation } from "main/utils/useBackend";
-//import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDateUtils"
-//import { useNavigate } from "react-router-dom";
-//import { hasRole } from "main/utils/currentUser";
 
-export default function RecommendationTable({ recommendations, _currentUser }) {
+import OurTable, { ButtonColumn } from "main/components/OurTable";
+//import OurTable from "main/components/OurTable";
+import { useBackendMutation } from "main/utils/useBackend";
+//import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/RecommendationUtils"
+//import { useNavigate } from "react-router-dom";
+import { hasRole } from "main/utils/currentUser";
+
+import { toast } from "react-toastify";
+
+export function onDeleteSuccess(message) {
+    console.log(message);
+    toast(message);
+}
+
+export function cellToAxiosParamsDelete(cell) {
+    return {
+        url: "/api/recommendation",
+        method: "DELETE",
+        params: {
+            id: cell.row.values.id
+        }
+    }
+}
+
+export default function RecommendationTable({ recommendations, currentUser }) {
+
 
     //const navigate = useNavigate();
 
@@ -14,15 +33,16 @@ export default function RecommendationTable({ recommendations, _currentUser }) {
     //}
 
     // Stryker disable all : hard to test for query caching
-    //const deleteMutation = useBackendMutation(
-    //    cellToAxiosParamsDelete,
-    //    { onSuccess: onDeleteSuccess },
-    //    ["/api/recommendation/all"]
-    //);
+    const deleteMutation = useBackendMutation(
+        cellToAxiosParamsDelete,
+        { onSuccess: onDeleteSuccess },
+        ["/api/recommendation/all"]
+    );
     // Stryker enable all 
 
     // Stryker disable next-line all : TODO try to make a good test for this
-    //const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+
 
     const columns = [
         {
@@ -39,7 +59,7 @@ export default function RecommendationTable({ recommendations, _currentUser }) {
         },
         {
             Header: 'Done?',
-            accessor: 'done',
+            id: 'done',
             accessor: (row, _rowIndex) => String(row.done) // hack needed for boolean values to show up
         },
         {
@@ -56,15 +76,17 @@ export default function RecommendationTable({ recommendations, _currentUser }) {
         }
     ];
 
-    //const columnsIfAdmin = [
-    //    ...columns,
-    //    ButtonColumn("Edit", "primary", editCallback, "RecommendationTable"),
-    //    ButtonColumn("Delete", "danger", deleteCallback, "RecommendationTable")
-    //];
 
-    //const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsIfAdmin = [
+        ...columns,
+        //ButtonColumn("Edit", "primary", editCallback, "RecommendationTable"),
+        ButtonColumn("Delete", "danger", deleteCallback, "RecommendationTable")
+    ];
 
-    const columnsToDisplay = columns;
+    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+
+    //const columnsToDisplay = columns;
+
 
     return <OurTable
         data={recommendations}
