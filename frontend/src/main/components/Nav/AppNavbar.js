@@ -77,7 +77,7 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
 
               {/* our code */}
               
-              {
+              {/* {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSB Dining Commons Menu" id="appnavbar-ucsbdiningcommonsmenu-dropdown" data-testid="appnavbar-ucsbdiningcommonsmenu-dropdown" >
                     <NavDropdown.Item as={Link} to="/ucsbdiningcommonsmenu/list" data-testid="appnavbar-ucsbdiningcommonsmenu-list">List Dining Commons Menu</NavDropdown.Item>
@@ -104,7 +104,7 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                     <NavDropdown.Item as={Link} to="/menuitemreview/list" data-testid="appnavbar-menuitemreview-list">List Menu Item Review</NavDropdown.Item>
                   </NavDropdown>
                 )
-              }
+              } */}
               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="Help Request" id="appnavbar-helprequest-dropdown" data-testid="appnavbar-helprequest-dropdown" >
@@ -112,13 +112,13 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
-              {
+              {/* {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="Articles" id="appnavbar-article-dropdown" data-testid="appnavbar-article-dropdown" >
                     <NavDropdown.Item as={Link} to="/article/list" data-testid="appnavbar-article-list">List Article</NavDropdown.Item>
                   </NavDropdown>
                 )
-              }
+              } */}
             </Nav>
 
             <Nav className="ml-auto">

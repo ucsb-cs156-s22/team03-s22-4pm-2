@@ -79,7 +79,7 @@ function App() {
 
         {/* our code */}
 
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
@@ -106,7 +106,7 @@ function App() {
               <Route exact path="/menuitemreview/list" element={<TodosIndexPage />} />
             </>
           )
-        }
+        } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
@@ -114,13 +114,13 @@ function App() {
             </>
           )
         }
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/article/list" element={<TodosIndexPage />} />
             </>
           )
-        }
+        } */}
 
       </Routes>
     </BrowserRouter>
