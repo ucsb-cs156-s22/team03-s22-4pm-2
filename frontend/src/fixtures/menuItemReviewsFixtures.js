@@ -21,7 +21,7 @@ const menuItemReviewsFixtures = {
             "itemId": "5",
             "reviewerEmail": "erenyu@ucsb.edu",
             "stars": 3,
-            "dateReviewed": "2022-05-07T12:00:00",
+            "dateReviewed": "2022-05-03T12:00:00",
             "comments": "Not bad."
         },
         {
@@ -29,7 +29,7 @@ const menuItemReviewsFixtures = {
             "itemId": "22",
             "reviewerEmail": "xxx@tentacion.com",
             "stars": 2,
-            "dateReviewed": "2022-05-12T12:00:00",
+            "dateReviewed": "2022-05-08T12:00:00",
             "comments": "Not good."
         } 
     ]
