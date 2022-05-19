@@ -163,7 +163,7 @@ describe("MenuItemReviewsIndexPage tests", () => {
         expect(deleteButton).toBeInTheDocument();
        
         fireEvent.click(deleteButton);
-[O
+	
         await waitFor(() => { expect(mockToast).toBeCalledWith("MenuItemReview with id 36 was deleted") });
 
     });
