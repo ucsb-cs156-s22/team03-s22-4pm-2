@@ -99,7 +99,7 @@ function App() {
             </>
           )
         }
-        /*{
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/menuitemreview/list" element={<TodosIndexPage />} />
@@ -112,8 +112,8 @@ function App() {
               <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
-        }
-        {*/
+        } */}
+        {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/articles/list" element={<ArticlesIndexPage />} />
