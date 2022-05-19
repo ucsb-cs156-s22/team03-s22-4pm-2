@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "main/pages/HomePage";
 import ProfilePage from "main/pages/ProfilePage";
@@ -106,13 +107,13 @@ function App() {
             </>
           )
         }
-        {
+        {/* {
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
-          }
+          } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
