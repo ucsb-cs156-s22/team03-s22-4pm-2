@@ -8,8 +8,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import java.time.LocalDateTime;
 
 
@@ -32,17 +32,16 @@ import java.time.LocalDateTime;
 @RestController
 @Slf4j
 public class MenuItemReviewController extends ApiController {
-    
 
     @Autowired
     MenuItemReviewRepository menuItemReviewRepository;
 
-    @ApiOperation(value = "List all Menu Item Review")
+    @ApiOperation(value = "List all reviews")
     @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/all")
-    public Iterable<MenuItemReview> allMenuItemReview() {
-        Iterable<MenuItemReview> review = menuItemReviewRepository.findAll();
-        return review;
+    public Iterable<MenuItemReview> allReviews() {
+        Iterable<MenuItemReview> reviews = menuItemReviewRepository.findAll();
+        return reviews;
     }
 
     @ApiOperation(value = "Get a single review")
@@ -50,10 +49,10 @@ public class MenuItemReviewController extends ApiController {
     @GetMapping("")
     public MenuItemReview getById(
             @ApiParam("id") @RequestParam Long id) {
-        MenuItemReview menuItemReview = menuItemReviewRepository.findById(id)
+                MenuItemReview reviews = menuItemReviewRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
 
-        return menuItemReview;
+        return reviews;
     }
 
     @ApiOperation(value = "Create a new review")
@@ -63,58 +62,58 @@ public class MenuItemReviewController extends ApiController {
             @ApiParam("itemId") @RequestParam Long itemId,
             @ApiParam("reviewerEmail") @RequestParam String reviewerEmail,
             @ApiParam("stars") @RequestParam int stars,
-            @ApiParam("date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)") @RequestParam("dateReviewed") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateReviewed,
-	    @ApiParam("comments") @RequestParam String comments
-					     )
+            @ApiParam("comments") @RequestParam String comments,
+            @ApiParam("dateReviewed (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)") @RequestParam("dateReviewed") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime)
             throws JsonProcessingException {
 
         // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
         // See: https://www.baeldung.com/spring-date-parameters
 
-        log.info("dateReviewed={}", dateReviewed);
+        log.info("localDateTime={}", localDateTime);
 
-        MenuItemReview menuItemReview = new MenuItemReview();
-        menuItemReview.setItemId(itemId);
-        menuItemReview.setReviewerEmail(reviewerEmail);
-        menuItemReview.setStars(stars);
-        menuItemReview.setDateReviewed(dateReviewed);
-        menuItemReview.setComments(comments);
+        MenuItemReview review = new MenuItemReview();
+        review.setItemId(itemId);
+        review.setReviewerEmail(reviewerEmail);
+        review.setStars(stars);
+        review.setComments(comments);
+        review.setDateReviewed(localDateTime);
 
-        MenuItemReview savedMenuItemReview = menuItemReviewRepository.save(menuItemReview);
+        MenuItemReview savedreview = menuItemReviewRepository.save(review);
 
-        return savedMenuItemReview;
+        return savedreview;
     }
 
-    @ApiOperation(value = "Delete a MenuItemReview")
+    @ApiOperation(value = "Delete a review")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("")
-    public Object deleteMenuItemReview(
+    public Object deleteReviews(
             @ApiParam("id") @RequestParam Long id) {
-        MenuItemReview menuItemReview = menuItemReviewRepository.findById(id)
+                MenuItemReview reviews = menuItemReviewRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
 
-        menuItemReviewRepository.delete(menuItemReview);
+        menuItemReviewRepository.delete(reviews);
         return genericMessage("MenuItemReview with id %s deleted".formatted(id));
     }
 
     @ApiOperation(value = "Update a single review")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("")
-    public MenuItemReview updateMenuItemReview(
+    public MenuItemReview updateReviews(
             @ApiParam("id") @RequestParam Long id,
             @RequestBody @Valid MenuItemReview incoming) {
 
-        MenuItemReview menuItemReview = menuItemReviewRepository.findById(id)
+                MenuItemReview reviews = menuItemReviewRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(MenuItemReview.class, id));
 
-        menuItemReview.setItemId(incoming.getItemId());
-        menuItemReview.setReviewerEmail(incoming.getReviewerEmail());
-        menuItemReview.setStars(incoming.getStars());
-        menuItemReview.setDateReviewed(incoming.getDateReviewed());
-        menuItemReview.setComments(incoming.getComments());
-	
-        menuItemReviewRepository.save(menuItemReview);
 
-        return menuItemReview;
+        reviews.setItemId(incoming.getItemId());  
+        reviews.setReviewerEmail(incoming.getReviewerEmail());
+        reviews.setStars(incoming.getStars());
+        reviews.setDateReviewed(incoming.getDateReviewed());
+        reviews.setComments(incoming.getComments());
+
+        menuItemReviewRepository.save(reviews);
+
+        return reviews;
     }
 }
