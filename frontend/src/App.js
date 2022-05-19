@@ -13,9 +13,6 @@ import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
-//comment for testing
-
-import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
 
 // our code
 
