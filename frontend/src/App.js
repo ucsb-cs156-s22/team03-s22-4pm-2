@@ -23,15 +23,15 @@ import RecommendationIndexPage from "main/pages/Recommendation/RecommendationInd
 // // Dinning Commons Menu
 import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuIndexPage";
 // // UCSB Organization
-import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 // // Recommendation Request
-import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
 // // Menu Item Review
-import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+// import MenuItemReviewIndexPage from "main/pages/MenuItemReview/<PlaceHolder>IndexPage";
 // // Help Request
-import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+//import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
-import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage";
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
@@ -105,7 +105,7 @@ function App() {
             </>
           )
         }
-        {
+        /*{
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/menuitemreview/list" element={<TodosIndexPage />} />
@@ -115,11 +115,11 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
+              <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
         }
-        {
+        {*/
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/articles/list" element={<ArticlesIndexPage />} />
