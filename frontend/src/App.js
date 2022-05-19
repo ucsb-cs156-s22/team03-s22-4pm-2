@@ -6,7 +6,6 @@ import AdminUsersPage from "main/pages/AdminUsersPage";
 import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
-import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
 import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage"
 
