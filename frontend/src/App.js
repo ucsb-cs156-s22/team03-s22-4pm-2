@@ -6,27 +6,26 @@ import AdminUsersPage from "main/pages/AdminUsersPage";
 import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
-
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
-
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
+
 // our code
 
 // // Dinning Commons Menu
-// import DiningCommonsMenuIndexPage from "main/pages/DiningCommonsMenu/DiningCommonsMenuIndexPage";
+import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuIndexPage";
 // // UCSB Organization
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 // // Recommendation Request
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import RecommendationIndexPage from "main/pages/Recommendation/RecommendationIndexPage";
 // // Menu Item Review
-import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
+import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 // // Help Request
-// import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+//import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage";
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
@@ -76,48 +75,48 @@ function App() {
             </>
           )
         }
-
+        
         {/* our code */}
 
-        {
+        { 
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsbdiningcommonsmenu/list" element={<TodosIndexPage />} />
+              <Route exact path="/ucsbdiningcommonsmenu/list" element={<UCSBDiningCommonsMenuIndexPage />} />
             </>
           )
         }
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/ucsborganization/list" element={<TodosIndexPage />} />
+              <Route exact path="/ucsborganization/list" element={<OrganizationIndexPage />} />
             </>
           )
         }
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/recommendation/list" element={<TodosIndexPage />} />
+              <Route exact path="/recommendation/list" element={<RecommendationIndexPage />} />
+            </>
+          )
+        }
+        {/* {
+          hasRole(currentUser, "ROLE_USER") && (
+            <>
+              <Route exact path="/menuitemreview/list" element={<MenuItemReviewsIndexPage />} />
             </>
           )
         }
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/menuitemreview/list" element={<MenuItemReviewIndexPage />} />
+              <Route exact path="/helprequest/list" element={<HelpRequestIndexPage />} />
             </>
           )
-        }
+        } */}
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
-            </>
-          )
-        }
-        {
-          hasRole(currentUser, "ROLE_USER") && (
-            <>
-              <Route exact path="/article/list" element={<TodosIndexPage />} />
+              <Route exact path="/articles/list" element={<ArticlesIndexPage />} />
             </>
           )
         }
