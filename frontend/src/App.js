@@ -23,15 +23,15 @@ import RecommendationIndexPage from "main/pages/Recommendation/RecommendationInd
 // // Dinning Commons Menu
 import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuIndexPage";
 // // UCSB Organization
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Recommendation Request
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Menu Item Review
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 // // Help Request
-// import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 // // Articles
-// import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
+import <PlaceHolder>IndexPage from "main/pages/<PlaceHolder>/<PlaceHolder>IndexPage";
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
@@ -84,7 +84,7 @@ function App() {
         
         {/* our code */}
 
-        {/* {
+        { 
           hasRole(currentUser, "ROLE_USER") && (
             <>
               <Route exact path="/ucsbdiningcommonsmenu/list" element={<UCSBDiningCommonsMenuIndexPage />} />
@@ -118,7 +118,7 @@ function App() {
               <Route exact path="/helprequest/list" element={<TodosIndexPage />} />
             </>
           )
-        } */}
+        }
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
