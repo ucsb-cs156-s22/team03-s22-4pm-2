@@ -28,7 +28,7 @@ import java.time.LocalDateTime;
 
 
 @Api(description = "MenuItemReview")
-@RequestMapping("/api/menuitemreview")
+@RequestMapping("/api/MenuItemReview")
 @RestController
 @Slf4j
 public class MenuItemReviewController extends ApiController {
