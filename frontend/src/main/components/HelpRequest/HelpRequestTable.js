@@ -15,7 +15,7 @@ export function cellToAxiosParamsDelete(cell) {
     }
 }
 
-export default function HelpRequestTable({ helpRequests, _currentUser }) {
+export default function HelpRequestTable({ helpRequests, currentUser }) {
 
     // const navigate = useNavigate();
 
@@ -73,7 +73,7 @@ export default function HelpRequestTable({ helpRequests, _currentUser }) {
     ];
 
     const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
-    //     const columnsToDisplay = columns;
+    // const columnsToDisplay = columns;
 
     return <OurTable
         data={helpRequests}
