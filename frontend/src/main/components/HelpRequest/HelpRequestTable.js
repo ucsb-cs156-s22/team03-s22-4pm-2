@@ -1,37 +1,37 @@
-import OurTable, { ButtonColumn } from "main/components/OurTable";
-import { useBackendMutation } from "main/utils/useBackend";
-import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
+import OurTable from "main/components/OurTable";
+// import { useBackendMutation } from "main/utils/useBackend";
+// import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
 //import { useNavigate } from "react-router-dom";
-import { hasRole } from "main/utils/currentUser";
+// import { hasRole } from "main/utils/currentUser";
 
-export function cellToAxiosParamsDelete(cell) {
-    return {
-        url: "/api/helprequest",
-        method: "DELETE",
-        params: {
-            id: cell.row.values.id
-        }
-    }
-}
+// export function cellToAxiosParamsDelete(cell) {
+//     return {
+//         url: "/api/helprequest",
+//         method: "DELETE",
+//         params: {
+//             id: cell.row.values.id
+//         }
+//     }
+// }
 
-export default function HelpRequestTable({ helpRequests, currentUser }) {
+export default function HelpRequestTable({ helpRequests, _currentUser }) {
 
-    // const navigate = useNavigate();
+    // // const navigate = useNavigate();
 
-    // const editCallback = (cell) => {
-    //     navigate(`/ucsbdates/edit/${cell.row.values.id}`)
-    // }
+    // // const editCallback = (cell) => {
+    // //     navigate(`/ucsbdates/edit/${cell.row.values.id}`)
+    // // }
 
-    // Stryker disable all : hard to test for query caching
-    const deleteMutation = useBackendMutation(
-        cellToAxiosParamsDelete,
-        { onSuccess: onDeleteSuccess },
-        ["/api/helprequest/all"]
-    );
-    // Stryker enable all 
+    // // Stryker disable all : hard to test for query caching
+    // const deleteMutation = useBackendMutation(
+    //     cellToAxiosParamsDelete,
+    //     { onSuccess: onDeleteSuccess },
+    //     ["/api/helprequest/all"]
+    // );
+    // // Stryker enable all 
 
-    // Stryker disable next-line all : TODO try to make a good test for this
-    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+    // // Stryker disable next-line all : TODO try to make a good test for this
+    // const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
 
     const columns = [
         {
@@ -65,14 +65,14 @@ export default function HelpRequestTable({ helpRequests, currentUser }) {
         }
     ];
 
-    const columnsIfAdmin = [
-        ...columns,
-        // ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
-        ButtonColumn("Delete", "danger", deleteCallback, "HelpRequestTable")
-    ];
+    // const columnsIfAdmin = [
+    //     ...columns,
+    //     // ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
+    //     ButtonColumn("Delete", "danger", deleteCallback, "HelpRequestTable")
+    // ];
 
-    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
-    // const columnsToDisplay = columns;
+    // const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsToDisplay = columns;
 
     return <OurTable
         data={helpRequests}
